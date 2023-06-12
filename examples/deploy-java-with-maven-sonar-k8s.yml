@@ -25,14 +25,6 @@ jobs:
     - name: maven target # change accordingly
       run: mvn clean install
 
-    - name: Perform analysis on Sonar Qube
-      uses: sonarsource/sonarcloud-github-action@v1
-      with:
-        sonarcloud.organization: <name of your org>
-        sonarcloud.projectKey: <key>
-        sonarcloud.projectName: <name>
-        sonarcloud.token: ${{ env.SONAR_TKN }}
-        sonarcloud.scannerVersion: "4.2.0.1873"
 
   deploy:
     needs: build
